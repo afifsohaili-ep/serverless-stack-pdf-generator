@@ -2,6 +2,6 @@ export async function handler(event) {
   return {
     statusCode: 200,
     headers: { "Content-Type": "text/plain" },
-    body: `Hello, World! Your request was received at ${event.requestContext.time}.`,
+    body: `Hello! You've requested to print the receipt at page ${event.queryStringParameters.url}`,
   };
 }
