@@ -6,7 +6,7 @@ export default function main(app) {
     runtime: "nodejs12.x"
   });
 
-  new MyStack(app, "my-stack");
+  new MyStack(app, "pdf-generator");
 
   // Add more stacks
 }
