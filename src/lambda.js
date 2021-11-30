@@ -1,4 +1,5 @@
 import chrome from "chrome-aws-lambda";
+import * as fs from "fs";
 
 const puppeteer = chrome.puppeteer;
 
@@ -24,10 +25,13 @@ export async function handler(event) {
 
     // Take the screenshot
     await page.pdf({path: 'receipt.pdf', width: width + "px", height: height + "px", printBackground: true});
+    const buffer = fs.readFileSync('receipt.pdf')
 
     response = {
       statusCode: 200,
-      body: JSON.stringify({message: 'Screenshot taken'})
+      headers: {'Content-type' : 'application/pdf'},
+      body: buffer.toString('base64'),
+      isBase64Encoded : true,
     };
   } catch(err) {
     response = {
