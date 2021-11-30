@@ -10,14 +10,20 @@
     "remove": "sst remove"
   },
   "eslintConfig": {
-    "extends": ["serverless-stack"]
+    "extends": [
+      "serverless-stack"
+    ]
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.132.0"
   },
   "dependencies": {
+    "@aws-cdk/aws-lambda": "1.132.0",
+    "@aws-cdk/core": "1.132.0",
     "@serverless-stack/cli": "0.53.0",
     "@serverless-stack/resources": "0.53.0",
-    "@aws-cdk/core": "1.132.0"
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer": "^12.0.1",
+    "puppeteer-core": "^12.0.1"
   }
 }
